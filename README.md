@@ -3,3 +3,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/da3fbfa9be885c04c229/maintainability)](https://codeclimate.com/github/p00pstar/java-project-61/maintainability)
 https://asciinema.org/a/DoE93koaBmvloZLIysw4jfdud
 https://asciinema.org/a/dX8JOchapm5zO8XkXR1a9TBc0
+https://asciinema.org/a/sbpHQBYAktSFnHewLW4Jw09PH

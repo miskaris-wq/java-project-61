@@ -3,7 +3,6 @@ import hexlet.games.Calc;
 import hexlet.games.Even;
 import java.util.Scanner;
 import hexlet.games.GCD;
-import hexlet.games.Progression;
 
 class App {
     public static void main(String[] args) {
@@ -24,9 +23,6 @@ class App {
         }
         if (choice.equals("4")) {
             System.out.println(GCD.gcd());
-        }
-        if (choice.equals("5")) {
-            System.out.println(Progression.prog());
         }
         scanner.close();
 

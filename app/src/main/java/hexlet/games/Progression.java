@@ -2,8 +2,6 @@ package hexlet.games;
 
 import hexlet.code.Engine;
 
-import java.util.Arrays;
-
 public class Progression {
     public static String prog(){
         int x;
@@ -29,8 +27,8 @@ public class Progression {
             temp = progression[y];
             progression[y] = "..";
             StringBuilder str_answ = new StringBuilder();
-            for (int j = 0; j < progression.length; j++) {
-                str_answ.append(progression[j]).append(" ");
+            for (String s : progression) {
+                str_answ.append(s).append(" ");
             }
             Engine.quest_answ(String.valueOf(str_answ));
             Engine.Equal(temp);

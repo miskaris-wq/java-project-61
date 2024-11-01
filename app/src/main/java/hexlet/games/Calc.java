@@ -1,5 +1,4 @@
 package hexlet.games;
-
 import hexlet.code.Engine;
 
 public class Calc {
@@ -14,41 +13,39 @@ public class Calc {
 
         System.out.println("What is the result of the expression?");
 
-        while(Engine.count < 3) {
-            int x = Engine.getRandomNumber(1,50);
-            int y = Engine.getRandomNumber(1,50);
-            operation = Engine.getRandomNumber(1,3);
+        while(Engine.getCount() < Engine.MAX_VALUE_COUNTER) {
+            int x = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
+            int y = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
+            operation = Engine.getRandomNumber(Engine.MIN_VALUE,Engine.MAX_VALUE_FOR_OPERATION);
             if (operation == 1) {
-                Engine.count++;
-                Engine.quest_answ(x + " + " + y);
+                Engine.setCount(Engine.getCount()+1);
+                Engine.questAnsw(x + " + " + y);
                 sum = x + y;
-                Engine.Equal(""+sum);
+                Engine.isEqual(""+sum);
             }
             else if (operation == 2) {
-                Engine.count++;
-                Engine.quest_answ(x + " - " + y);
+                Engine.setCount(Engine.getCount()+1);
+                Engine.questAnsw(x + " - " + y);
                 sub = x - y;
-                Engine.Equal(""+sub);
+                Engine.isEqual(""+sub);
             }
             else {
-                Engine.count++;
-                Engine.quest_answ(x + " * " + y);
+                Engine.setCount(Engine.getCount()+1);
+                Engine.questAnsw(x + " * " + y);
                 multi = x * y;
-                Engine.Equal(""+multi);
+                Engine.isEqual(""+multi);
             }
         }
-        if (Engine.count ==3) {
-            return "Congratulations, " + Engine.userName + "!";
+        if (Engine.getCount() == Engine.MAX_VALUE_COUNTER) {
+            return "Congratulations, " + Engine.getUserName() + "!";
         }
         else {
             if (operation == 1) {
-                return Engine.Equal(""+sum);
-            }
-            else if (operation == 2) {
-                return Engine.Equal(""+sub);
-            }
-            else{
-                return Engine.Equal(""+multi);
+                return Engine.isEqual(""+sum);
+            } else if (operation == 2) {
+                return Engine.isEqual(""+sub);
+            } else{
+                return Engine.isEqual(""+multi);
             }
         }
     }

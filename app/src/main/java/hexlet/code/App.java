@@ -1,12 +1,17 @@
 package hexlet.code;
-import hexlet.games.*;
+import hexlet.games.Calc;
+import hexlet.games.Even;
+import hexlet.games.GCD;
+import hexlet.games.Progression;
+import hexlet.games.Prime;
 
 import java.util.Scanner;
 
 class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the game number and press Enter. \n 1 - Greet \n 2 - Even\n 3 - Calc\n 4 - GCD\n 5 - Progression\n 6 - Prime\n 0 - Exit");
+        System.out.println("Please enter the game number and press Enter. \n 1 - Greet \n 2 - Even");
+        System.out.println(" 3 - Calc\n 4 - GCD\n 5 - Progression\n 6 - Prime\n 0 - Exit");
         String choice = scanner.next();
         System.out.println("Your choice: " + choice);
         System.out.println();
@@ -30,6 +35,5 @@ class App {
             System.out.println(Prime.prime());
         }
         scanner.close();
-
     }
 }

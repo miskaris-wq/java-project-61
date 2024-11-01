@@ -1,14 +1,13 @@
 package hexlet.games;
-
 import hexlet.code.Engine;
 
 public class Prime {
     public static String prime() {
         Engine.greet();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        while (Engine.count < 3) {
-            int x = Engine.getRandomNumber(1,50);
-            Engine.quest_answ("" + x);
+        while (Engine.getCount() < Engine.MAX_VALUE_COUNTER) {
+            int x = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
+            Engine.questAnsw("" + x);
 
             boolean flag = true;
 
@@ -25,13 +24,13 @@ public class Prime {
 
             String correctAnswer = flag ? "yes" : "no";
 
-            String result = Engine.Equal(correctAnswer);
+            String result = Engine.isEqual(correctAnswer);
             if (!result.isEmpty()) {
                 return result;
             }
 
-            Engine.count++;
+            Engine.setCount(Engine.getCount()+1);
         }
-        return "Congratulations, " + Engine.userName + "!";
+        return "Congratulations, " + Engine.getUserName() + "!";
     }
 }

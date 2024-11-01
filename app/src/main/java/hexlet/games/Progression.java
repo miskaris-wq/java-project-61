@@ -28,8 +28,11 @@ public class Progression {
             y = Engine.getRandomNumber(0,9);
             temp = progression[y];
             progression[y] = "..";
-
-            Engine.quest_answ(Arrays.toString(progression));
+            StringBuilder str_answ = new StringBuilder();
+            for (int j = 0; j < progression.length; j++) {
+                str_answ.append(progression[j]).append(" ");
+            }
+            Engine.quest_answ(String.valueOf(str_answ));
             Engine.Equal(temp);
             Engine.count++;
         }

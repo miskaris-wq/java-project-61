@@ -25,7 +25,7 @@ public class Even {
         if (Engine.getCount() == Engine.MAX_VALUE_COUNTER) {
         return "Congratulations, " + Engine.getUserName() + "!";
         } else {
-            if (x % 2 == 0){
+            if (x % 2 == 0) {
                 return Engine.isEqual("yes");
             } else {
                 return Engine.isEqual("no");

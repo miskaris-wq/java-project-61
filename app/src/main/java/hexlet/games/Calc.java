@@ -16,7 +16,7 @@ public class Calc {
         while (Engine.getCount() < Engine.MAX_VALUE_COUNTER) {
             int x = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
             int y = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
-            operation = Engine.getRandomNumber(Engine.MIN_VALUE,Engine.MAX_VALUE_FOR_OPERATION);
+            operation = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE_FOR_OPERATION);
             if (operation == 1) {
                 Engine.setCount(Engine.getCount() + 1);
                 Engine.questAnsw(x + " + " + y);
@@ -41,7 +41,7 @@ public class Calc {
                 return Engine.isEqual("" + sum);
             } else if (operation == 2) {
                 return Engine.isEqual("" + sub);
-            } else{
+            } else {
                 return Engine.isEqual("" + multi);
             }
         }

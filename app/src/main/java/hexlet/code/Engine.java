@@ -23,8 +23,9 @@ public class Engine {
     @Getter
     @Setter
     private static int count;
-
-    static Scanner scanner = new Scanner(System.in);
+    @Getter
+    @Setter
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void greet() {
         System.out.println("Welcome to the Brain Games!");

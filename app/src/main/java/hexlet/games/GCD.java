@@ -15,7 +15,7 @@ public class GCD {
         while (Engine.getCount() < Engine.MAX_VALUE_COUNTER) {
            x = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
            y = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
-           for (int i = 1; i <= Math.min(x,y); i++) {
+           for (int i = 1; i <= Math.min(x, y); i++) {
                if (x % i == 0 && y % i == 0) {
                    gcd = i;
                    }
@@ -26,8 +26,7 @@ public class GCD {
         }
         if (Engine.getCount() == Engine.MAX_VALUE_COUNTER) {
             return "Congratulations, " + Engine.getUserName() + "!";
-        }
-        else {
+        } else {
             return Engine.isEqual("" + gcd);
         }
     }

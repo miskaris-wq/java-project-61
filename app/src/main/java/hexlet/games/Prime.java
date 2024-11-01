@@ -3,8 +3,11 @@ import hexlet.code.Engine;
 
 public class Prime {
     public static String prime() {
+
         Engine.greet();
+
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+
         while (Engine.getCount() < Engine.MAX_VALUE_COUNTER) {
             int x = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
             Engine.questAnsw("" + x);

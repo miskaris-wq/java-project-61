@@ -2,7 +2,7 @@ package hexlet.games;
 import hexlet.code.Engine;
 
 public class Progression {
-    public static String prog(){
+    public static String prog() {
         int x;
         int num;
         int y;
@@ -13,7 +13,7 @@ public class Progression {
 
         System.out.println("What number is missing in the progression?");
 
-        while(Engine.getCount() < Engine.MAX_VALUE_COUNTER) {
+        while (Engine.getCount() < Engine.MAX_VALUE_COUNTER) {
             x = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
             num = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.VALUE_FOR_PROGRESS);
             progression[0] = "" + x;
@@ -22,16 +22,16 @@ public class Progression {
                 x = x + num;
                 progression[i] = "" + x;
             }
-            y = Engine.getRandomNumber(Engine.MIN_VALUE_FOR_INDEX,Engine.MAX_VALUE_FOR_INDEX);
+            y = Engine.getRandomNumber(Engine.MIN_VALUE_FOR_INDEX, Engine.MAX_VALUE_FOR_INDEX);
             temp = progression[y];
             progression[y] = "..";
-            StringBuilder str_answ = new StringBuilder();
+            StringBuilder strAnsw = new StringBuilder();
             for (String s : progression) {
-                str_answ.append(s).append(" ");
+                strAnsw.append(s).append(" ");
             }
-            Engine.questAnsw(String.valueOf(str_answ));
+            Engine.questAnsw(String.valueOf(strAnsw));
             Engine.isEqual(temp);
-            Engine.setCount(Engine.getCount()+1);
+            Engine.setCount(Engine.getCount() + 1);
         }
         if (Engine.getCount() == Engine.MAX_VALUE_COUNTER) {
             return "Congratulations, " + Engine.getUserName() + "!";

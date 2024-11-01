@@ -45,9 +45,10 @@ public class Engine {
             return "";
         } else {
             count = NUM_FOR_END_LOOP;
-            String firstPart = "'" + Engine.answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.";
+            String firstPart = "'" + Engine.answer + "'" + " is wrong answer ;(.";
+            String middlePart = "Correct answer was " + "'" + correctAnswer + "'.";
             String secondPart = "\n Let's try again, " + Engine.userName + "!";
-            return firstPart + secondPart;
+            return firstPart + middlePart + secondPart;
 
         }
     }

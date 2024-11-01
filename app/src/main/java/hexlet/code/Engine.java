@@ -26,14 +26,12 @@ public class Engine {
             return "";
         }
         else {
-            count = 3;
+            count = 4;
             return "'" + Engine.answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + cor_answer + "'" + ".\n Let's try again, " + Engine.userName + "!";
 
         }
     }
-    public static int getRandomNumber() {
-        int min = 1;
-        int max = 50;
+    public static int getRandomNumber(int min, int max) {
         return min + (int) (Math.random() * (max - min + 1));
     }
 }

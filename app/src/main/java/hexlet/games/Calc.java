@@ -12,15 +12,12 @@ public class Calc {
 
         Engine.greet();
 
-        int max_for_operators = 3;
-        int min_for_operators = 1;
-
         System.out.println("What is the result of the expression?");
 
         while(Engine.count < 3) {
-            int x = Engine.getRandomNumber();
-            int y = Engine.getRandomNumber();
-            operation = min_for_operators + (int) (Math.random()*(max_for_operators - min_for_operators + 1));
+            int x = Engine.getRandomNumber(1,50);
+            int y = Engine.getRandomNumber(1,50);
+            operation = Engine.getRandomNumber(1,3);
             if (operation == 1) {
                 Engine.count++;
                 Engine.quest_answ(x + " + " + y);

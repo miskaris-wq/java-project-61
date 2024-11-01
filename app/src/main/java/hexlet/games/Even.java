@@ -12,7 +12,7 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         while (Engine.count < 3) {
-            x = Engine.getRandomNumber();
+            x = Engine.getRandomNumber(1,50);
             Engine.quest_answ("" + x);
             Engine.count++;
             if (x%2 == 0) {

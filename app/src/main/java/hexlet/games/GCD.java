@@ -13,8 +13,8 @@ public class GCD {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         while (Engine.count < 3) {
-           x = Engine.getRandomNumber();
-           y = Engine.getRandomNumber();
+           x = Engine.getRandomNumber(1,50);
+           y = Engine.getRandomNumber(1,50);
            for (int i = 1; i <= Math.min(x,y); i++) {
                if (x % i == 0 && y % i == 0) {
                    gcd = i;

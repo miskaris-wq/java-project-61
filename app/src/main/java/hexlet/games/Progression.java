@@ -18,7 +18,7 @@ public class Progression {
             num = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.VALUE_FOR_PROGRESS);
             progression[0] = "" + x;
 
-            for (int i = 1; i < 10; i++) {
+            for (int i = 1; i < Engine.VALUE_FOR_RANGE_MASSIVE; i++) {
                 x = x + num;
                 progression[i] = "" + x;
             }
@@ -35,8 +35,7 @@ public class Progression {
         }
         if (Engine.getCount() == Engine.MAX_VALUE_COUNTER) {
             return "Congratulations, " + Engine.getUserName() + "!";
-        }
-        else {
+        } else {
             return Engine.isEqual(temp);
         }
     }

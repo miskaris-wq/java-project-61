@@ -13,24 +13,21 @@ public class Even {
         while (Engine.getCount() < Engine.MAX_VALUE_COUNTER) {
             x = Engine.getRandomNumber(Engine.MIN_VALUE, Engine.MAX_VALUE);
             Engine.questAnsw("" + x);
-            Engine.setCount(Engine.getCount()+1);
-            if (x%2 == 0) {
+            Engine.setCount(Engine.getCount() + 1);
+            if (x % 2 == 0) {
                 Engine.isEqual("yes");
-            }
-            else {
+            } else {
                 Engine.isEqual("no");
 
             }
         }
 
-        if (Engine.getCount() ==3) {
+        if (Engine.getCount() == Engine.MAX_VALUE_COUNTER) {
         return "Congratulations, " + Engine.getUserName() + "!";
-        }
-        else {
-            if (x%2 == 0){
+        } else {
+            if (x % 2 == 0){
                 return Engine.isEqual("yes");
-            }
-            else{
+            } else {
                 return Engine.isEqual("no");
             }
         }

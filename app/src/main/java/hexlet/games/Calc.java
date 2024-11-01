@@ -36,8 +36,7 @@ public class Calc {
         }
         if (Engine.getCount() == Engine.MAX_VALUE_COUNTER) {
             return "Congratulations, " + Engine.getUserName() + "!";
-        }
-        else {
+        } else {
             if (operation == 1) {
                 return Engine.isEqual("" + sum);
             } else if (operation == 2) {

@@ -32,7 +32,7 @@ public class Prime {
                 return result;
             }
 
-            Engine.setCount(Engine.getCount()+1);
+            Engine.setCount(Engine.getCount() + 1);
         }
         return "Congratulations, " + Engine.getUserName() + "!";
     }

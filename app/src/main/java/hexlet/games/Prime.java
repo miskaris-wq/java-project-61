@@ -5,7 +5,6 @@ import hexlet.code.Engine;
 public class Prime {
     public static String prime() {
         Engine.greet();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         while (Engine.count < 3) {
             int x = Engine.getRandomNumber(1,50);
             Engine.quest_answ("" + x);
@@ -32,7 +31,6 @@ public class Prime {
 
             Engine.count++;
         }
-
         return "Congratulations, " + Engine.userName + "!";
     }
 }

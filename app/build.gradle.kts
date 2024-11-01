@@ -2,7 +2,7 @@ plugins {
     id("java")
     application
     checkstyle
-
+    id("io.freefair.lombok") version "8.4"
 }
 
 group = "hexlet.code"
@@ -12,7 +12,6 @@ application {
     mainClass = "hexlet.code.App"
 }
 
-
 repositories {
     mavenCentral()
 }
@@ -20,6 +19,8 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    compileOnly("org.projectlombok:lombok:1.18.34")
+    annotationProcessor("org.projectlombok:lombok:1.18.34")
 }
 
 tasks.test {

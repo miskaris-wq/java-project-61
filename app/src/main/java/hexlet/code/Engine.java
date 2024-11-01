@@ -26,7 +26,7 @@ public class Engine {
             return "";
         }
         else {
-            count = 4;
+            count = 3;
             return "'" + Engine.answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + cor_answer + "'" + ".\n Let's try again, " + Engine.userName + "!";
 
         }

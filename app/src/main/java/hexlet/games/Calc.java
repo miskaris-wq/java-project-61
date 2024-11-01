@@ -5,7 +5,6 @@ import hexlet.code.Engine;
 public class Calc {
 
     public static String calc() {
-
         int operation = 0;
         int sum = 0;
         int sub = 0;
@@ -40,7 +39,6 @@ public class Calc {
                 multi = x * y;
                 Engine.Equal(""+multi);
             }
-
         }
         if (Engine.count ==3) {
             return "Congratulations, " + Engine.userName + "!";

@@ -6,7 +6,9 @@ public class Even {
 
     public static String isEven() {
         int x = 0;
+
         Engine.greet();
+
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         while (Engine.count < 3) {

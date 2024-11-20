@@ -44,7 +44,7 @@ public class Engine {
     public static int getRandomNumber(int min, int max) {
         return min + (int) (Math.random() * (max - min + 1));
     }
-    public static String game (String str, String[] questions, String correctAnswers[]) {
+    public static String game (String str, String[] questions, String[] correctAnswers) {
         Engine.greet();
         System.out.println(str);
         while (Engine.getCount() < Engine.MAX_VALUE_COUNTER) {

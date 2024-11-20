@@ -3,3 +3,13 @@
 
 # Ignore Gradle build output directory
 build
+# Игнорирование настроек и кэша IDE
+.idea/
+
+# Игнорирование файлов и папок, связанных с Gradle
+.gradle/
+gradle/
+build/
+
+# Игнорирование системных файлов macOS
+.DS_Store

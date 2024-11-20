@@ -4,11 +4,10 @@ import hexlet.code.Engine;
 
 public class GCD {
     public static void gcd() {
-        int numberOfQuestions = 3;
-        String[] questions = new String[numberOfQuestions];
-        String[] answers = new String[numberOfQuestions];
+        String[] questions = new String[Engine.getNUMBER_OF_QUESTIONS()];
+        String[] answers = new String[Engine.getNUMBER_OF_QUESTIONS()];
         int gcd = 0;
-        for (int i = 0; i < numberOfQuestions; i++){
+        for (int i = 0; i < Engine.getNUMBER_OF_QUESTIONS(); i++) {
             int x = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
             int y = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
             for (int j = 1; j <= Math.min(x, y); j++) {

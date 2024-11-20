@@ -3,12 +3,10 @@ import hexlet.code.Engine;
 
 public class Prime {
     public static void prime() {
+        String[] questions = new String[Engine.getNUMBER_OF_QUESTIONS()];
+        String[] answers = new String[Engine.getNUMBER_OF_QUESTIONS()];
 
-        int numberOfQuestions = 3;
-        String[] questions = new String[numberOfQuestions];
-        String[] answers = new String[numberOfQuestions];
-
-        for (int i = 0; i < numberOfQuestions; i++) {
+        for (int i = 0; i < Engine.getNUMBER_OF_QUESTIONS(); i++) {
             int x = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
             questions[i] = String.valueOf(x);
             boolean flag = true;
@@ -28,6 +26,7 @@ public class Prime {
 
             answers[i] = correctAnswer;
         }
-        System.out.println(Engine.game("Answer 'yes' if given number is prime. Otherwise answer 'no'.", questions, answers));
+        String str = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        System.out.println(Engine.game(str, questions, answers));
     }
 }

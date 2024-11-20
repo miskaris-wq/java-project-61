@@ -3,13 +3,12 @@ import hexlet.code.Engine;
 
 public class Calc {
     public static void calc() {
-        int numberOfQuestions = 3;
-        String[] questions = new String[numberOfQuestions];
-        String[] answers = new String[numberOfQuestions];
+        String[] questions = new String[Engine.getNUMBER_OF_QUESTIONS()];
+        String[] answers = new String[Engine.getNUMBER_OF_QUESTIONS()];
 
         String[] operations = {"+", "-", "*"};
 
-        for (int i = 0; i < numberOfQuestions; i++) {
+        for (int i = 0; i < Engine.getNUMBER_OF_QUESTIONS(); i++) {
             int x = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
             int y = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
             int operationIndex = Engine.getRandomNumber(0, operations.length - 1);
@@ -31,8 +30,13 @@ public class Calc {
                     question = x + " * " + y;
                     answer = String.valueOf(x * y);
                     break;
-            }
+                default:
 
+                    question = "Invalid operation";
+                    answer = "0";
+                    break;
+
+            }
             questions[i] = question;
             answers[i] = answer;
         }

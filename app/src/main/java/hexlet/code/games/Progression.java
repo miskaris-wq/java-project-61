@@ -4,13 +4,13 @@ import hexlet.code.Engine;
 public class Progression {
 
     public static void prog() {
-        int numberOfQuestions = 3;
-        String[] questions = new String[numberOfQuestions];
-        String[] answers = new String[numberOfQuestions];
+
+        String[] questions = new String[Engine.getNUMBER_OF_QUESTIONS()];
+        String[] answers = new String[Engine.getNUMBER_OF_QUESTIONS()];
 
         String[] progression = new String[Engine.getVALUE_FOR_RANGE_MASSIVE()];
 
-        for (int i = 0; i < numberOfQuestions; i++) {
+        for (int i = 0; i < Engine.getNUMBER_OF_QUESTIONS(); i++) {
             int start = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
             int step = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
 

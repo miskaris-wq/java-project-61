@@ -8,6 +8,8 @@ public class Engine {
     @Getter
     private static final int MAX_VALUE_COUNTER = 3;
     @Getter
+    private static final int NUMBER_OF_QUESTIONS = 3;
+    @Getter
     private static final int MAX_VALUE = 50;
     @Getter
     private static final int MIN_VALUE = 1;
@@ -44,7 +46,7 @@ public class Engine {
     public static int getRandomNumber(int min, int max) {
         return min + (int) (Math.random() * (max - min + 1));
     }
-    public static String game (String str, String[] questions, String[] correctAnswers) {
+    public static String game(String str, String[] questions, String[] correctAnswers) {
         Engine.greet();
         System.out.println(str);
         while (Engine.getCount() < Engine.MAX_VALUE_COUNTER) {

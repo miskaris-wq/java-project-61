@@ -1,13 +1,14 @@
 package hexlet.code;
-import hexlet.games.Calc;
-import hexlet.games.Even;
-import hexlet.games.GCD;
-import hexlet.games.Progression;
-import hexlet.games.Prime;
-
 import java.util.Scanner;
 
-class App {
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+
+public class App {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter. \n 1 - Greet \n 2 - Even");
@@ -20,20 +21,25 @@ class App {
             Cli.askName();
         }
         if (choice.equals("2")) {
-            System.out.println(Even.isEven());
+            Even.isEven();
         }
         if (choice.equals("3")) {
-            System.out.println(Calc.calc());
+            Calc.calc();
         }
+
         if (choice.equals("4")) {
-            System.out.println(GCD.gcd());
+            GCD.gcd();
         }
+
         if (choice.equals("5")) {
-            System.out.println(Progression.prog());
+            Progression.prog();
         }
+
         if (choice.equals("6")) {
-            System.out.println(Prime.prime());
+            Prime.prime();
         }
+
         scanner.close();
     }
 }
+

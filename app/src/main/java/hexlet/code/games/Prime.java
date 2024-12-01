@@ -1,13 +1,18 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
+import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
 
 public class Prime {
     public static void prime() {
-        String[] questions = new String[Engine.getNUMBER_OF_QUESTIONS()];
-        String[] answers = new String[Engine.getNUMBER_OF_QUESTIONS()];
+        final int MAX_VALUE = 50;
+        final int MIN_VALUE = 1;
+        String[] questions = new String[NUMBER_OF_QUESTIONS];
+        String[] answers = new String[NUMBER_OF_QUESTIONS];
 
-        for (int i = 0; i < Engine.getNUMBER_OF_QUESTIONS(); i++) {
-            int x = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
+        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
+            int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
             questions[i] = String.valueOf(x);
             boolean flag = true;
 

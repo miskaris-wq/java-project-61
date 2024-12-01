@@ -17,29 +17,29 @@ public class App {
         System.out.println("Your choice: " + choice);
         System.out.println();
 
-        if (choice.equals("1")) {
-            Cli.askName();
+        switch (choice) {
+            case "1":
+                Cli.askName();
+                break;
+            case "2":
+                Even.isEven();
+                break;
+            case "3":
+                Calc.calc();
+                break;
+            case "4":
+                GCD.gcd();
+                break;
+            case "5":
+                Progression.prog();
+                break;
+            case "6":
+                Prime.prime();
+                break;
+            default:
+                System.out.println("Неверный выбор. Пожалуйста, выберите правильный номер.");
+                break;
         }
-        if (choice.equals("2")) {
-            Even.isEven();
-        }
-        if (choice.equals("3")) {
-            Calc.calc();
-        }
-
-        if (choice.equals("4")) {
-            GCD.gcd();
-        }
-
-        if (choice.equals("5")) {
-            Progression.prog();
-        }
-
-        if (choice.equals("6")) {
-            Prime.prime();
-        }
-
-        scanner.close();
     }
 }
 

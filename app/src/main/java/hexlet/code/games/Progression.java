@@ -1,24 +1,29 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
+import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
 
 public class Progression {
 
     public static void prog() {
+        final int MAX_VALUE = 50;
+        final int MIN_VALUE = 1;
+        final int VALUE_FOR_RANGE_MASSIVE = 10;
+        String[] questions = new String[NUMBER_OF_QUESTIONS];
+        String[] answers = new String[NUMBER_OF_QUESTIONS];
 
-        String[] questions = new String[Engine.getNUMBER_OF_QUESTIONS()];
-        String[] answers = new String[Engine.getNUMBER_OF_QUESTIONS()];
+        String[] progression = new String[VALUE_FOR_RANGE_MASSIVE];
 
-        String[] progression = new String[Engine.getVALUE_FOR_RANGE_MASSIVE()];
-
-        for (int i = 0; i < Engine.getNUMBER_OF_QUESTIONS(); i++) {
-            int start = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
-            int step = Engine.getRandomNumber(Engine.getMIN_VALUE(), Engine.getMAX_VALUE());
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
+            int start = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            int step = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
 
             for (int j = 0; j < progression.length; j++) {
                 progression[j] = String.valueOf(start + j * step);
             }
 
-            int missingIndex = Engine.getRandomNumber(Engine.getMIN_VALUE(), progression.length - 1);
+            int missingIndex = Utils.getRandomNumber(MIN_VALUE, progression.length - 1);
 
             answers[i] = progression[missingIndex];
 

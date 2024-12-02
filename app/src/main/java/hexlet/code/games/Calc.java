@@ -6,16 +6,16 @@ import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
 
 public class Calc {
     public static void calc() {
-        final int MAX_VALUE = 50;
-        final int MIN_VALUE = 1;
+        final int maxValue = 50;
+        final int minValue = 1;
         String[] questions = new String[NUMBER_OF_QUESTIONS];
         String[] answers = new String[NUMBER_OF_QUESTIONS];
 
         String[] operations = {"+", "-", "*"};
 
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            int x = Utils.getRandomNumber(minValue, maxValue);
+            int y = Utils.getRandomNumber(minValue, maxValue);
             int operationIndex = Utils.getRandomNumber(0, operations.length - 1);
 
             String operation = operations[operationIndex];

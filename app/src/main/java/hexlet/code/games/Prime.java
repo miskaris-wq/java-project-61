@@ -6,13 +6,13 @@ import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
 
 public class Prime {
     public static void prime() {
-        final int MAX_VALUE = 50;
-        final int MIN_VALUE = 1;
+        final int maxValue = 50;
+        final int minValue = 1;
         String[] questions = new String[NUMBER_OF_QUESTIONS];
         String[] answers = new String[NUMBER_OF_QUESTIONS];
 
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            int x = Utils.getRandomNumber(minValue, maxValue);
             questions[i] = String.valueOf(x);
             boolean flag = true;
 

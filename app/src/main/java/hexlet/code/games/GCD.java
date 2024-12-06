@@ -6,25 +6,33 @@ import hexlet.code.Utils;
 import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
 
 public class GCD {
+
     public static void gcd() {
         final int maxValue = 50;
         final int minValue = 1;
         String[] questions = new String[NUMBER_OF_QUESTIONS];
         String[] answers = new String[NUMBER_OF_QUESTIONS];
-        int gcd = 0;
+
+        generateQuestionsAndAnswers(questions, answers, minValue, maxValue);
+
+        System.out.println(Engine.game("Find the greatest common divisor of given numbers.", questions, answers));
+    }
+
+    private static void generateQuestionsAndAnswers(String[] questions, String[] answers, int minValue, int maxValue) {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
             int x = Utils.getRandomNumber(minValue, maxValue);
             int y = Utils.getRandomNumber(minValue, maxValue);
-            for (int j = 1; j <= Math.min(x, y); j++) {
-                if (x % j == 0 && y % j == 0) {
-                    gcd = j;
-                }
-            }
             questions[i] = x + " " + y;
-            answers[i] = String.valueOf(gcd);
-
+            answers[i] = String.valueOf(calculateGCD(x, y));
         }
-        System.out.println(Engine.game("Find the greatest common divisor of given numbers.", questions, answers));
+    }
 
+    private static int calculateGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 }

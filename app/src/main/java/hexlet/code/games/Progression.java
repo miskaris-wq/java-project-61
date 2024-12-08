@@ -19,7 +19,8 @@ public class Progression {
         System.out.println(Engine.game("What number is missing in the progression?", questions, answers));
     }
 
-    private static void generateQuestionsAndAnswers(String[] questions, String[] answers, int minValue, int maxValue, int progressionLength) {
+    private static void generateQuestionsAndAnswers(String[] questions, String[] answers,
+                                                    int minValue, int maxValue, int progressionLength) {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
             int start = Utils.getRandomNumber(minValue, maxValue);
             int step = Utils.getRandomNumber(minValue, maxValue);

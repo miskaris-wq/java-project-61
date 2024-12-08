@@ -21,7 +21,8 @@ public class Calc {
         System.out.println(Engine.game("What is the result of the expression?", questions, answers));
     }
 
-    private static void generateQuestionsAndAnswers(String[] questions, String[] answers, String[] operations, int minValue, int maxValue) {
+    private static void generateQuestionsAndAnswers(String[] questions, String[] answers, String[] operations,
+                                                    int minValue, int maxValue) {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
             int x = Utils.getRandomNumber(minValue, maxValue);
             int y = Utils.getRandomNumber(minValue, maxValue);

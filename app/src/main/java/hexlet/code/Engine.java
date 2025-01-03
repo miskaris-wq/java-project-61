@@ -14,7 +14,7 @@ public class Engine {
         return userName;
     }
 
-    private static String questionAnsw(String question) {
+    private static String generateStringOfQuestionsAndAnswers(String question) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Question: " + question);
         String answer = scanner.next();
@@ -27,7 +27,7 @@ public class Engine {
         int count = 0;
         System.out.println(str);
         while (count < NUMBER_OF_QUESTIONS) {
-            String answer = questionAnsw(questions[count]);
+            String answer = generateStringOfQuestionsAndAnswers(questions[count]);
             if (answer.equals(correctAnswers[count])) {
                 System.out.println("Correct!");
             } else {

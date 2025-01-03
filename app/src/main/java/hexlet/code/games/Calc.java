@@ -38,15 +38,11 @@ public class Calc {
     }
 
     private static String calculateAnswer(int x, int y, String operation) {
-        switch (operation) {
-            case "+":
-                return String.valueOf(x + y);
-            case "-":
-                return String.valueOf(x - y);
-            case "*":
-                return String.valueOf(x * y);
-            default:
-                return "0";
-        }
+        return switch (operation) {
+            case "+" -> String.valueOf(x + y);
+            case "-" -> String.valueOf(x - y);
+            case "*" -> String.valueOf(x * y);
+            default -> throw new RuntimeException("unknown operation");
+        };
     }
 }

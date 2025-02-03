@@ -21,7 +21,7 @@ public class Calc {
 
         Engine.game("What is the result of the expression?", questionsAndAnswers);
     }
-    private static String[] generateRound(){
+    private static String[] generateRound() {
         int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         String operation = OPERATIONS[Utils.getRandomNumber(0, OPERATIONS.length - 1)];

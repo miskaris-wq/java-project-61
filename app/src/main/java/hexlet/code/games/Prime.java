@@ -18,12 +18,12 @@ public class Prime {
         String instruction = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         Engine.game(instruction, questionsAndAnswers);
     }
-    private static String[] generateRound(){
+    private static String[] generateRound() {
         int number = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         var correctAnswer = isPrime(number) ? "yes" : "no";
         return new String[] {String.valueOf(number), correctAnswer};
     }
- 
+
     private static boolean isPrime(int number) {
         if (number < 2) {
             return false;

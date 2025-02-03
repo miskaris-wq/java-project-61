@@ -20,7 +20,7 @@ public class Even {
 
         Engine.game(instruction, questionsAndAnswers);
     }
-    private static String[] generateRound(){
+    private static String[] generateRound() {
         int number = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         var correctAnswer = isEvenNumber(number) ? "yes" : "no";
         return new String[] {String.valueOf(number), correctAnswer};

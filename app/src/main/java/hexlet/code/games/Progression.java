@@ -21,7 +21,7 @@ public class Progression {
         Engine.game("What number is missing in the progression?", questionsAndAnswers);
     }
 
-    private static String[] generateRound(){
+    private static String[] generateRound() {
         int start = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         int step = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         String[] progression = createProgression(start, step);
@@ -30,20 +30,6 @@ public class Progression {
         progression[missingIndex] = "..";
 
         return new String[] {String.join(" ", progression), correctAnswer};
-    }
-
-    private static void generateQuestionsAndAnswers(String[][] questionsAndAnswers) {
-        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int start = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            int step = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            String[] progression = createProgression(start, step);
-
-            int missingIndex = Utils.getRandomNumber(0, PROGRESSION_LENGTH - 1);
-            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = progression[missingIndex];
-            progression[missingIndex] = "..";
-
-            questionsAndAnswers[i][0] = String.join(" ", progression);
-        }
     }
 
     private static String[] createProgression(int start, int step) {

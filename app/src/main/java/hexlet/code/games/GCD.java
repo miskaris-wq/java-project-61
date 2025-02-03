@@ -18,7 +18,7 @@ public class GCD {
         Engine.game("Find the greatest common divisor of given numbers.", questionsAndAnswers);
     }
 
-    private static String[] generateRound(){
+    private static String[] generateRound() {
         int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         var correctAnswer = String.valueOf(calculateGCD(x, y));

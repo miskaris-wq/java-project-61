@@ -4,40 +4,39 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
+import static hexlet.code.Engine.MAX_VALUE;
+import static hexlet.code.Engine.MIN_VALUE;
 
 public class Progression {
 
+    private static final int progressionLength = 10;
+
     public static void prog() {
-        final int maxValue = 50;
-        final int minValue = 1;
-        final int progressionLength = 10;
-        String[] questions = new String[NUMBER_OF_QUESTIONS];
-        String[] answers = new String[NUMBER_OF_QUESTIONS];
 
-        generateQuestionsAndAnswers(questions, answers, minValue, maxValue, progressionLength);
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][NUMBER_OF_QUESTIONS - 1];
 
-        System.out.println(Engine.game("What number is missing in the progression?", questions, answers));
+        generateQuestionsAndAnswers(questionsAndAnswers);
+
+        Engine.game("What number is missing in the progression?", questionsAndAnswers);
     }
 
-    private static void generateQuestionsAndAnswers(String[] questions, String[] answers,
-                                                    int minValue, int maxValue, int progressionLength) {
+    private static void generateQuestionsAndAnswers(String[][] questionsAndAnswers) {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int start = Utils.getRandomNumber(minValue, maxValue);
-            int step = Utils.getRandomNumber(minValue, maxValue);
-            String[] progression = createProgression(start, step, progressionLength);
-
+            int start = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            int step = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            String[] progression = createProgression(start, step);
 
             int missingIndex = Utils.getRandomNumber(0, progressionLength - 1);
-            answers[i] = progression[missingIndex];
+            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = progression[missingIndex];
             progression[missingIndex] = "..";
 
-            questions[i] = String.join(" ", progression);
+            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 3] = String.join(" ", progression);
         }
     }
 
-    private static String[] createProgression(int start, int step, int length) {
-        String[] progression = new String[length];
-        for (int j = 0; j < length; j++) {
+    private static String[] createProgression(int start, int step) {
+        String[] progression = new String[progressionLength];
+        for (int j = 0; j < progressionLength; j++) {
             progression[j] = String.valueOf(start + j * step);
         }
         return progression;

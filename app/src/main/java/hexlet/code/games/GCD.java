@@ -4,26 +4,25 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
+import static hexlet.code.Engine.MAX_VALUE;
+import static hexlet.code.Engine.MIN_VALUE;
 
 public class GCD {
 
     public static void gcd() {
-        final int maxValue = 50;
-        final int minValue = 1;
-        String[] questions = new String[NUMBER_OF_QUESTIONS];
-        String[] answers = new String[NUMBER_OF_QUESTIONS];
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][NUMBER_OF_QUESTIONS - 1];
 
-        generateQuestionsAndAnswers(questions, answers, minValue, maxValue);
+        generateQuestionsAndAnswers(questionsAndAnswers);
 
-        System.out.println(Engine.game("Find the greatest common divisor of given numbers.", questions, answers));
+        Engine.game("Find the greatest common divisor of given numbers.", questionsAndAnswers);
     }
 
-    private static void generateQuestionsAndAnswers(String[] questions, String[] answers, int minValue, int maxValue) {
+    private static void generateQuestionsAndAnswers(String[][] questionsAndAnswers) {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int x = Utils.getRandomNumber(minValue, maxValue);
-            int y = Utils.getRandomNumber(minValue, maxValue);
-            questions[i] = x + " " + y;
-            answers[i] = String.valueOf(calculateGCD(x, y));
+            int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 3] = x + " " + y;
+            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = String.valueOf(calculateGCD(x, y));
         }
     }
 

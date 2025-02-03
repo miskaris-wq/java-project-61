@@ -20,6 +20,7 @@ public class Progression {
         Engine.game("What number is missing in the progression?", questionsAndAnswers);
     }
 
+
     private static void generateQuestionsAndAnswers(String[][] questionsAndAnswers) {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
             int start = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);

@@ -11,21 +11,19 @@ public class Even {
 
     public static void isEven() {
 
-        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][NUMBER_OF_QUESTIONS - 1];
-
-        generateQuestionsAndAnswers(questionsAndAnswers);
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][];
+        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
+            questionsAndAnswers[i] = generateRound();
+        }
 
         String instruction = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         Engine.game(instruction, questionsAndAnswers);
     }
-
-    private static void generateQuestionsAndAnswers(String[][] questionsAndAnswers) {
-        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int number = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            questionsAndAnswers[i][0] = String.valueOf(number);
-            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = isEvenNumber(number) ? "yes" : "no";
-        }
+    private static String[]  generateRound(){
+        int number = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+        var correctAnswer = isEvenNumber(number) ? "yes" : "no";
+        return new String[] {String.valueOf(number), correctAnswer};
     }
 
     private static boolean isEvenNumber(int number) {

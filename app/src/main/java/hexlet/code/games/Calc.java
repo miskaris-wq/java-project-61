@@ -14,21 +14,19 @@ public class Calc {
 
     public static void calc() {
 
-        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][NUMBER_OF_QUESTIONS - 1];
-
-        generateQuestionsAndAnswers(questionsAndAnswers);
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][];
+        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
+            questionsAndAnswers[i] = generateRound();
+        }
 
         Engine.game("What is the result of the expression?", questionsAndAnswers);
     }
-
-    private static void generateQuestionsAndAnswers(String[][] questionsAndAnswers) {
-        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            String operation = OPERATIONS[Utils.getRandomNumber(0, OPERATIONS.length - 1)];
-            questionsAndAnswers[i][0] = generateQuestion(x, y, operation);
-            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = calculateAnswer(x, y, operation);
-        }
+    private static String[]  generateRound(){
+        int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+        int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+        String operation = OPERATIONS[Utils.getRandomNumber(0, OPERATIONS.length - 1)];
+        var correctAnswer = calculateAnswer(x, y, operation);
+        return new String[] {generateQuestion(x, y, operation), correctAnswer};
     }
 
     private static String generateQuestion(int x, int y, String operation) {

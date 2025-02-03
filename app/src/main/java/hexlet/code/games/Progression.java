@@ -9,7 +9,7 @@ import static hexlet.code.Engine.MIN_VALUE;
 
 public class Progression {
 
-    private static final int progressionLength = 10;
+    private static final int PROGRESSION_LENGTH = 10;
 
     public static void prog() {
 
@@ -26,17 +26,17 @@ public class Progression {
             int step = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
             String[] progression = createProgression(start, step);
 
-            int missingIndex = Utils.getRandomNumber(0, progressionLength - 1);
+            int missingIndex = Utils.getRandomNumber(0, PROGRESSION_LENGTH - 1);
             questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = progression[missingIndex];
             progression[missingIndex] = "..";
 
-            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 3] = String.join(" ", progression);
+            questionsAndAnswers[i][0] = String.join(" ", progression);
         }
     }
 
     private static String[] createProgression(int start, int step) {
-        String[] progression = new String[progressionLength];
-        for (int j = 0; j < progressionLength; j++) {
+        String[] progression = new String[PROGRESSION_LENGTH];
+        for (int j = 0; j < PROGRESSION_LENGTH; j++) {
             progression[j] = String.valueOf(start + j * step);
         }
         return progression;

@@ -12,7 +12,7 @@ public class Engine {
         System.out.println(instruction);
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Question: " + questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 3]);
+            System.out.println("Question: " + questionsAndAnswers[i][0]);
             String answer = scanner.next();
             System.out.println("Your answer: " + answer);
             if (answer.equals(questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2])) {

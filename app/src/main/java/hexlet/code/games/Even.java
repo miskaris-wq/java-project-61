@@ -23,7 +23,7 @@ public class Even {
     private static void generateQuestionsAndAnswers(String[][] questionsAndAnswers) {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
             int number = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 3] = String.valueOf(number);
+            questionsAndAnswers[i][0] = String.valueOf(number);
             questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = isEvenNumber(number) ? "yes" : "no";
         }
     }

@@ -10,7 +10,7 @@ import static hexlet.code.Engine.MIN_VALUE;
 
 public class Calc {
 
-    private static final String[] operations = {"+", "-", "*"};
+    private static final String[] OPERATIONS = {"+", "-", "*"};
 
     public static void calc() {
 
@@ -25,9 +25,8 @@ public class Calc {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
             int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
             int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            String operation = operations[Utils.getRandomNumber(0, operations.length - 1)];
-
-            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 3] = generateQuestion(x, y, operation);
+            String operation = OPERATIONS[Utils.getRandomNumber(0, OPERATIONS.length - 1)];
+            questionsAndAnswers[i][0] = generateQuestion(x, y, operation);
             questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = calculateAnswer(x, y, operation);
         }
     }

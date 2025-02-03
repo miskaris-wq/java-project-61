@@ -21,7 +21,7 @@ public class GCD {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
             int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
             int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 3] = x + " " + y;
+            questionsAndAnswers[i][0] = x + " " + y;
             questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = String.valueOf(calculateGCD(x, y));
         }
     }

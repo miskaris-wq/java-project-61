@@ -10,20 +10,19 @@ import static hexlet.code.Engine.MIN_VALUE;
 public class GCD {
 
     public static void gcd() {
-        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][NUMBER_OF_QUESTIONS - 1];
-
-        generateQuestionsAndAnswers(questionsAndAnswers);
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][];
+        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
+            questionsAndAnswers[i] = generateRound();
+        }
 
         Engine.game("Find the greatest common divisor of given numbers.", questionsAndAnswers);
     }
 
-    private static void generateQuestionsAndAnswers(String[][] questionsAndAnswers) {
-        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            questionsAndAnswers[i][0] = x + " " + y;
-            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = String.valueOf(calculateGCD(x, y));
-        }
+    private static String[] generateRound(){
+        int x = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+        int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+        var correctAnswer = String.valueOf(calculateGCD(x, y));
+        return new String[] {x + " " + y, correctAnswer};
     }
 
     private static int calculateGCD(int a, int b) {

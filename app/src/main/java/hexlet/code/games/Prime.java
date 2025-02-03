@@ -10,22 +10,20 @@ import static hexlet.code.Engine.MIN_VALUE;
 public class Prime {
 
     public static void prime() {
-        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][NUMBER_OF_QUESTIONS - 1];
-
-        generateQuestionsAndAnswers(questionsAndAnswers);
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][];
+        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
+            questionsAndAnswers[i] = generateRound();
+        }
 
         String instruction = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         Engine.game(instruction, questionsAndAnswers);
     }
-
-    private static void generateQuestionsAndAnswers(String[][] questionsAndAnswers) {
-        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int number = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-            questionsAndAnswers[i][0] = String.valueOf(number);
-            questionsAndAnswers[i][NUMBER_OF_QUESTIONS - 2] = isPrime(number) ? "yes" : "no";
-        }
+    private static String[] generateRound(){
+        int number = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+        var correctAnswer = isPrime(number) ? "yes" : "no";
+        return new String[] {String.valueOf(number), correctAnswer};
     }
-
+ 
     private static boolean isPrime(int number) {
         if (number < 2) {
             return false;

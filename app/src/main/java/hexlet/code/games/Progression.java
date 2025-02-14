@@ -9,8 +9,6 @@ import static hexlet.code.Engine.MIN_VALUE;
 
 public class Progression {
 
-    private static final int PROGRESSION_LENGTH = 10;
-
     public static void prog() {
 
         String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTIONS][];
@@ -24,17 +22,18 @@ public class Progression {
     private static String[] generateRound() {
         int start = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         int step = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-        String[] progression = createProgression(start, step);
-        int missingIndex = Utils.getRandomNumber(0, PROGRESSION_LENGTH - 1);
+        int progressionLength = 10;
+        String[] progression = createProgression(start, step, progressionLength);
+        int missingIndex = Utils.getRandomNumber(0, progressionLength - 1);
         var correctAnswer = progression[missingIndex];
         progression[missingIndex] = "..";
 
         return new String[] {String.join(" ", progression), correctAnswer};
     }
 
-    private static String[] createProgression(int start, int step) {
-        String[] progression = new String[PROGRESSION_LENGTH];
-        for (int j = 0; j < PROGRESSION_LENGTH; j++) {
+    private static String[] createProgression(int start, int step, int lenght) {
+        String[] progression = new String[lenght];
+        for (int j = 0; j < lenght; j++) {
             progression[j] = String.valueOf(start + j * step);
         }
         return progression;

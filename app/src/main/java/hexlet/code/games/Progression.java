@@ -24,7 +24,7 @@ public class Progression {
     private static String[] generateRound() {
         int start = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         int step = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
-        String[] progression = createProgression(start, step);
+        String[] progression = createProgression(start, step, PROGRESSION_LENGTH);
         int missingIndex = Utils.getRandomNumber(0, PROGRESSION_LENGTH - 1);
         var correctAnswer = progression[missingIndex];
         progression[missingIndex] = "..";
@@ -32,9 +32,9 @@ public class Progression {
         return new String[] {String.join(" ", progression), correctAnswer};
     }
 
-    private static String[] createProgression(int start, int step) {
-        String[] progression = new String[Progression.PROGRESSION_LENGTH];
-        for (int j = 0; j < Progression.PROGRESSION_LENGTH; j++) {
+    private static String[] createProgression(int start, int step, int length) {
+        String[] progression = new String[length];
+        for (int j = 0; j < length; j++) {
             progression[j] = String.valueOf(start + j * step);
         }
         return progression;

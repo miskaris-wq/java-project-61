@@ -26,18 +26,18 @@ public class Calc {
         int y = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         String operation = OPERATIONS[Utils.getRandomNumber(0, OPERATIONS.length - 1)];
         var correctAnswer = calculateAnswer(x, y, operation);
-        return new String[] {generateQuestion(x, y, operation), correctAnswer};
+        return new String[] {generateQuestion(x, y, operation), String.valueOf(correctAnswer)};
     }
 
     private static String generateQuestion(int x, int y, String operation) {
         return x + " " + operation + " " + y;
     }
 
-    private static String calculateAnswer(int x, int y, String operation) {
+    private static int calculateAnswer(int x, int y, String operation) {
         return switch (operation) {
-            case "+" -> String.valueOf(x + y);
-            case "-" -> String.valueOf(x - y);
-            case "*" -> String.valueOf(x * y);
+            case "+" -> x + y;
+            case "-" -> x - y;
+            case "*" -> x * y;
             default -> throw new RuntimeException("unknown operation");
         };
     }
